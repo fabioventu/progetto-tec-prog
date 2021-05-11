@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'prog-tecno';
+  constructor(public http: HttpClient) {}
+
 
 }
 

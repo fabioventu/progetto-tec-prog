@@ -8,24 +8,23 @@ h5 {text-align: center;}
 </style>
 </head>
 <body>
-  <h1 style="color:#d80f0f">INFORMAZIONI SULLE RAZZE</h1>
+  <h1 style="color:#e4f310">INFORMAZIONI SULLE RAZZE</h1>
 <h4></h4>
 
-
-<div *ngFor="let list of image">
-    <img [src]='list' />
-</div>
 <div class="form-group">
-    <label for="contactMethod">Contact method</label>
+    <label for="contactMethod">SCELTA</label>
     <select
         name="contactMethod"
         id="contactMethod"
         class="form-control"
-        [(ngModel)]="contact.contactMethod">
-        <option *ngFor="let method of contactMethods" [value]="method.id">{{ method.label }}</option>
+        [(ngModel)]="sesso">
+        <option *ngFor="let method of listaSesso" [value]="method.id">{{ method.tipo }}</option>
     </select>
 </div>
 
+<div *ngFor="let list of image">
+    <img [src]='list' />
+</div>
 
 <p class="a"></p>
 <p>

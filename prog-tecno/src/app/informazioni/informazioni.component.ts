@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class InformazioniComponent implements OnInit {
 
   constructor() { }
-
+  sesso : String ;
 
   image: any[] = [
   "/assets/3NX63.jpg",
@@ -34,9 +34,16 @@ export class InformazioniComponent implements OnInit {
 
 
  ]
- contactMethods = [
-    { id: 1, label: "Email" },
-    { id: 2, label: "Phone" }
+ listaSesso = [
+    { id: "M", tipo: "maschio" },
+    { id: "F", tipo: "femmina" },
+    { id: "R", tipo: "regione" },
+    { id: "RA", tipo: "razza" },
+    { id: "E", tipo: "eta" },
+    { id: "T", tipo: "taglia" },
+    { id: "P", tipo: "pelo" },
+    { id: "S", tipo: "sterilizzato" },
+
 ]
 contact = {
     firstName: "CFR",

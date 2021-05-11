@@ -1,11 +1,11 @@
 
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const app= express();
 
 const MongoClient = require('mongodb').MongoClient; //Importo la libreria mongodb
 
 /* GET users listing. */
-router.get('/', function (req, res, next) {
+app.get('/', function (req, res, next) {
     const uri = "mongodb+srv:fabioventurini:ciaopimpa@cluster0.zx7mf.mongodb.net/myFirstDatabase?"
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     client.connect(err => {
@@ -21,5 +21,6 @@ router.get('/', function (req, res, next) {
     res.send('respond with a resource');
 });
 
-module.exports = router;
+app.listen(3000,  () => {console.log('Example app listening on port 3000!');});
+
 
