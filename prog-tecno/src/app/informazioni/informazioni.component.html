@@ -1,31 +1,80 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<style>
-h1 {text-align: center;}
-h4 {text-align: center;}
-h5 {text-align: center;}
-</style>
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    h4 {
+      text-align: center;
+    }
+
+    h5 {
+      text-align: center;
+    }
+  </style>
 </head>
+
 <body>
-  <h1 style="color:#e4f310">INFORMAZIONI SULLE RAZZE</h1>
-<h4></h4>
+  <h1 style="color:#b16502">INFORMAZIONI SULLE RAZZE</h1>
+  <h4></h4>
 
-<div class="form-group">
-    <label for="contactMethod">SCELTA</label>
-    <select
-        name="contactMethod"
-        id="contactMethod"
-        class="form-control"
-        [(ngModel)]="sesso">
-        <option *ngFor="let method of listaSesso" [value]="method.id">{{ method.tipo }}</option>
-    </select>
-</div>
+  <div class="card-group container">
+    <div class="card col-sm-2">
+      <div class="form-group ">
+        <label for="contactMethod">Sesso</label>
+        <select name="contactMethod" id="contactMethod" class="form-control" [(ngModel)]="sesso">
+          <option *ngFor="let method of listaSesso" [value]="method.id">{{ method.tipo }}</option>
+        </select>
+      </div>
+    </div>
 
-<div *ngFor="let list of image">
-    <img [src]='list' />
-</div>
 
-<p class="a"></p>
-<p>
-</p>
+    <div class="card col-sm-2">
+      <div class="form-group ">
+        <label for="contactMethod">pelo</label>
+        <select name="contactMethod" id="contactMethod" class="form-control" [(ngModel)]="pelo">
+          <option *ngFor="let method of listaPelo" [value]="method.id">{{ method.tipo }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="card col-sm-2">
+      <div class="form-group ">
+        <label for="contactMethod">Sterilizzato</label>
+        <select name="contactMethod" id="contactMethod" class="form-control" [(ngModel)]="sterilizzato">
+          <option *ngFor="let method of listaSter" [value]="method.id">{{ method.tipo }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="card col-sm-2">
+      <div class="form-group ">
+        <label for="contactMethod">regioni</label>
+        <select name="contactMethod" id="contactMethod" class="form-control" [(ngModel)]="regioni">
+          <option *ngFor="let method of listaRegioni" [value]="method.id">{{ method.tipo }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="card col-sm-2">
+      <div class="form-group">
+        <label for=" contactMethod">taglia</label>
+        <select name="contactMethod" id="contactMethod" class="form-control" [(ngModel)]="taglia">
+          <option *ngFor="let method of listaTaglia" [value]="method.id">{{ method.tipo }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="container">
+      <div *ngFor="let list of image">
+        <img [src]='list' />
+      </div>
+
+    </div>
+
+    <p class="a"></p>
+    <p>
+    </p>

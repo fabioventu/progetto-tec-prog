@@ -9,6 +9,10 @@ export class InformazioniComponent implements OnInit {
 
   constructor() { }
   sesso : String ;
+  taglia : String;
+  pelo : String ;
+  regioni : String ;
+  sterilizzato : String ;
 
   image: any[] = [
   "/assets/3NX63.jpg",
@@ -36,15 +40,50 @@ export class InformazioniComponent implements OnInit {
  ]
  listaSesso = [
     { id: "M", tipo: "maschio" },
-    { id: "F", tipo: "femmina" },
-    { id: "R", tipo: "regione" },
-    { id: "RA", tipo: "razza" },
-    { id: "E", tipo: "eta" },
-    { id: "T", tipo: "taglia" },
-    { id: "P", tipo: "pelo" },
-    { id: "S", tipo: "sterilizzato" },
+    { id: "F", tipo: "femmina" }
+]
+listaTaglia = [
+    { id: "G", tipo: "grande" },
+    { id: "ME", tipo: "media" },
+    { id: "P", tipo: "piccola" }
+]
+listaPelo = [
+    { id: "L", tipo: "lungo" },
+    { id: "MED", tipo: "medio" },
+    { id: "C", tipo: "corto" }
+]
+
+listaSter= [
+    { id: "Si", tipo: "si" },
+    { id: "No", tipo: "no" },
 
 ]
+listaRegioni = [
+    { id: "a", tipo: "abruzzo" },
+    { id: "b", tipo: "basilicata" },
+    { id: "c", tipo: "calabria" },
+    { id: "d", tipo: "campania" },
+    { id: "e", tipo: "emilia-romagna" },
+    { id: "f", tipo: "friuli" },
+    { id: "g", tipo: "lazio" },
+    { id: "h", tipo: "liguria" },
+    { id: "i", tipo: "lombardia" },
+    { id: "j", tipo: "marche" },
+    { id: "k", tipo: "molise" },
+    { id: "l", tipo: "piemonte" },
+    { id: "m", tipo: "puglia" },
+    { id: "n", tipo: "sardegna" },
+    { id: "o", tipo: "sicilia" },
+    { id: "p", tipo: "toscana" },
+    { id: "q", tipo: "trentino" },
+    { id: "r", tipo: "umbria" },
+    { id: "s", tipo: "valle d'aosta" },
+    { id: "t", tipo: "veneto" }
+
+
+]
+
+
 contact = {
     firstName: "CFR",
     comment: "No comment",
