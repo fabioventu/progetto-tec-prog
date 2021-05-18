@@ -3,11 +3,12 @@ const express = require('express');
 const app = express();
 const uri = "mongodb+srv://fabioventurini:ciaopimpa@cluster0.zx7mf.mongodb.net/Cluster0?retryWrites=true&w=majority"
 const MongoClient = require('mongodb').MongoClient; //Importo la libreria mongodb
+const cors = require('cors');
 
 /* GET users listing. */
 
 
-
+app.use(cors());
 
 app.get('/', function (req, res, next) {
 
@@ -20,11 +21,12 @@ app.get('/', function (req, res, next) {
             if (err) console.log(err.message); //Se c'è qualche errore lo stampo
             else console.log(result);
             res.send(result);
-            client.close(); //Quando ho terminato la find chiudo la sessione con il db
+            client.close(); 
         }); //Eseguo la query e passo una funzione di callback
     });
 
 });
+
 app.get('/taglia/:taglia', function (req, res, next) {
   
     const t = req.params.taglia;
@@ -44,6 +46,8 @@ app.get('/taglia/:taglia', function (req, res, next) {
     });
 
 });
+
+
 app.get('/sesso/:sesso', function (req, res, next) {
   
     const s = req.params.sesso;

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-informazioni',
@@ -7,11 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InformazioniComponent implements OnInit {
 
-  constructor() { }
+  constructor(public http: HttpClient) { }
   sesso : String ;
   taglia : String;
   pelo : String ;
   sterilizzato : String ;
+  o :Observable<Object>;
+  data:Object;
 
   image: any[] = [
   "/assets/3NX63.jpg",
@@ -49,7 +53,7 @@ export class InformazioniComponent implements OnInit {
 ]
 listaTaglia = [
     { id: "G", tipo: "grande" },
-    { id: "ME", tipo: "media" },
+    { id: "media", tipo: "media" },
     { id: "P", tipo: "piccola" }
 ]
 listaPelo = [
@@ -76,5 +80,17 @@ contact = {
 
   ngOnInit(): void {
   }
+
+  ciao(taglia){
+this.o = this.http.get(`https://3000-white-constrictor-cw8ydu3m.ws-eu04.gitpod.io/taglia/${taglia}`);
+     this.o.subscribe(this.getData);
+  }
+
+getData = (d : Object) =>
+   {
+     this.data = new Object(d);
+console.log(this.data);
+   }
+
 
 }
