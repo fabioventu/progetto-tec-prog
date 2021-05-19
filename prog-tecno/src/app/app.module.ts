@@ -8,12 +8,20 @@ import { InformazioniComponent } from './informazioni/informazioni.component';
 import { AssistenzaComponent } from './assistenza/assistenza.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { ChangeForgotPasswordComponent } from './change-forgot-password/change-forgot-password.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InformazioniComponent,
-    AssistenzaComponent
+    AssistenzaComponent,
+    LoginComponent,
+    ChangeForgotPasswordComponent,
+    ChangePasswordComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
