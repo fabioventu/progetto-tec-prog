@@ -55,9 +55,9 @@ export class InformazioniComponent implements OnInit {
     { id: "F", tipo: "femmina" }
 ]
 listaTaglia = [
-    { id: "G", tipo: "grande" },
     { id: "medio", tipo: "medio" },
-    { id: "P", tipo: "piccola" }
+    { id: "G", tipo: "grande" },
+    { id: "P", tipo: "piccolo" }
 ]
 listaPelo = [
     { id: "L", tipo: "lungo" },
@@ -85,9 +85,26 @@ contact = {
   }
 
   ciao(taglia){
-this.o = this.http.get(`https://3000-gold-dog-ysosh9sm.ws-eu07.gitpod.io/taglia/${taglia}`);
-     this.o.subscribe(this.getData);
-  }
+
+    if (taglia = 'medio')
+    this.o = this.http.get(`https://3000-crimson-lemming-2nzikjf1.ws-eu07.gitpod.io/taglia/medio`);
+    this.o.subscribe(this.getData);
+     if (taglia = 'grande')
+      this.o = this.http.get(`https://3000-crimson-lemming-2nzikjf1.ws-eu07.gitpod.io/taglia/grande`);
+    this.o.subscribe(this.getData);
+    if (taglia = 'piccolo')
+      this.o = this.http.get(`https://3000-crimson-lemming-2nzikjf1.ws-eu07.gitpod.io/taglia/piccolo`);
+    this.o.subscribe(this.getData);
+
+
+
+
+
+
+}
+
+
+
 
 getData = (d : Object) =>
    {
@@ -96,7 +113,7 @@ getData = (d : Object) =>
       console.log(this.a)
       for (const i of this.a) {
 
-        this.array.push(i.CF)
+        this.array.push(i)
       }
       console.log(this.array)
    }
