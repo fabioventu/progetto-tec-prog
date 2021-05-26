@@ -16,6 +16,8 @@ export class InformazioniComponent implements OnInit {
   sterilizzato : String ;
   o :Observable<Object>;
   data:Object;
+  array: Array<any> = new Array<any>();
+  a:any;
 
   image: any[] = [
   "/assets/3NX63.jpg",
@@ -47,13 +49,14 @@ export class InformazioniComponent implements OnInit {
 
 
  ]
+ //image2: any[] = ["3NX63" : "/assets/3NX63.jpg"]
  listaSesso = [
     { id: "M", tipo: "maschio" },
     { id: "F", tipo: "femmina" }
 ]
 listaTaglia = [
     { id: "G", tipo: "grande" },
-    { id: "media", tipo: "media" },
+    { id: "medio", tipo: "medio" },
     { id: "P", tipo: "piccola" }
 ]
 listaPelo = [
@@ -82,14 +85,19 @@ contact = {
   }
 
   ciao(taglia){
-this.o = this.http.get(`https://3000-white-constrictor-cw8ydu3m.ws-eu04.gitpod.io/taglia/${taglia}`);
+this.o = this.http.get(`https://3000-gold-dog-ysosh9sm.ws-eu07.gitpod.io/taglia/${taglia}`);
      this.o.subscribe(this.getData);
   }
 
 getData = (d : Object) =>
    {
      this.data = new Object(d);
-console.log(this.data);
+      this.a=this.data
+      console.log(this.a)
+      for (const i of this.a) {
+        this.array.push(this.a[i])
+      }
+      console.log(this.array)
    }
 
 

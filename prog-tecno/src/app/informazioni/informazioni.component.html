@@ -60,14 +60,27 @@
         </select>
       </div>
     </div>
-<button (click)='ciao(taglia)' type="button" class="btn">Basic</button>
+
+
+<button (click)='ciao(taglia)' type="button" class="btn">scegli</button>
+<!--
     <div class="container">
       <div *ngFor="let list of image">
         <img [src]='list' />
       </div>
-
     </div>
-
+ -->
+ <br>
+ <br>
+ <br>
+    <div *ngFor="let i of array">
+      {{i.nome}}
+      {{i.eta}}
+      {{i.sesso}}
+      {{i.taglia}}
+      {{i.razza}}
+      <img src="/assets/{{i.CF}}.jpg">
+    </div>
     <p class="a"></p>
     <p>
     </p>
