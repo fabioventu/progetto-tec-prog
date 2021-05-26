@@ -95,7 +95,8 @@ getData = (d : Object) =>
       this.a=this.data
       console.log(this.a)
       for (const i of this.a) {
-        this.array.push(this.a[i])
+
+        this.array.push(i.CF)
       }
       console.log(this.array)
    }
