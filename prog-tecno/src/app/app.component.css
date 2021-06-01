@@ -1,10 +1,16 @@
 body {
-  background-color: rgb(240, 222, 119);
+  width: 100vw;
+  height: 100vh;
+  background-image:url("https://static-www.castedduonline.it/wp-content/2017/06/15780-653x367.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
 }
 
 h1 {
   color: rgb(39, 180, 62);
   text-align: center;
+
 }
 
 p {
